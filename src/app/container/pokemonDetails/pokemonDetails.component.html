@@ -1,0 +1,11 @@
+<mat-card class="pokemon-details-container"> 
+    <mat-card-title>Hi, I'm {{this.pokemonName | titlecase}}</mat-card-title>
+    <a routerLink="/mylist/"><button mat-raised-button color="primary" (click)="addPokemon()">Add</button></a>
+    <a routerLink="/wishlist/"><button mat-raised-button color="accent" (click)="catchPokemon()">Catch me!</button></a>
+    <mat-card-subtitle>Moves:</mat-card-subtitle>
+    <ul class="moves">
+        <li *ngFor="let move of pokemonMoves">
+            {{move}}
+        </li>
+    </ul>
+</mat-card>

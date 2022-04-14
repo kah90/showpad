@@ -1,0 +1,13 @@
+:host {
+    display: flex;
+    justify-content: center;
+}
+.pokemon-details-container {
+    margin-top: 15px;
+    width: 190px;
+}
+
+button {
+    margin-right: 15px;
+    margin-bottom:15px;
+}

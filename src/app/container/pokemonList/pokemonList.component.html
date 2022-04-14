@@ -1,0 +1,22 @@
+<mat-card class="pokemon-container"> 
+    <mat-card-title>Pokemon cards</mat-card-title>
+    <mat-card-subtitle>Find your pokemon</mat-card-subtitle>
+    <mat-form-field class="search">
+      <mat-label>Search your pokemon</mat-label>
+      <input matInput (input)="handleSearchEvent($event.target.value)" #input>
+  </mat-form-field>
+    <section class="pokemon-card">
+      <mat-card *ngFor="let pokemon of pokemonList">
+        <mat-card-subtitle>{{pokemon.name |titlecase}}</mat-card-subtitle>
+        <a routerLink="/pokemon/{{pokemon.name}}">
+        <img class="door-logo" src="./../assets/png/door.png">
+      </a>
+      </mat-card>
+    </section>
+    <mat-paginator [length]="length"
+               [pageSize]="pageSize"
+               [pageSizeOptions]="pageSizeOptions"
+               (page)="handlePageEvent($event)"
+               aria-label="Select page">
+    </mat-paginator>
+</mat-card>
